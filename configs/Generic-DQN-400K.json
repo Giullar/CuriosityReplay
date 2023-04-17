@@ -1,0 +1,57 @@
+{
+    "selected_agent": "DQN",
+    "use_priority_combinator": true,
+    "agent_params": {
+        "DQN": {
+            "lr": 0.001,
+            "grad_clipping": null,
+            "gamma": 0.99
+        },
+        "SAC": {
+            "lr_critic": 0.001,
+            "lr_actor": 0.001,
+            "lr_alpha": 0.001,
+            "gamma": 0.99
+        }
+    },
+    "buffer_params": {
+        "buffer_size": 40000,
+        "prioritized_replay_alpha": 0.6,
+        "prioritized_replay_beta0": 0.4,
+        "exploration_fraction": 0.1,
+        "exploration_final_eps": 0.01
+    },
+    "training_params": {
+        "agent_train_freq": 4,
+        "total_timesteps": 400000,
+        "learning_starts": 1000,
+        "batch_size": 64,
+        "eval_freq": 4000,
+        "k_rollouts": 10,
+        "buffer_prs_plot_freq": 40000
+    },
+    "priority_combinator_params": {
+        "w_ic": 1,
+        "w_td": 0,
+        "w_rw": 0
+    },
+    "prioritizers_params": {
+        "DIST": {
+            "learning_rate": 0.001
+        },
+        "AESH": {
+            "k": 32,
+            "encoder_output_size": 32,
+            "lambda_regularizer": 10,
+            "beta": 1,
+            "learning_rate": 0.001
+        },
+        "ICM": {
+            "embedding_size": 32,
+            "beta": 0.2,
+            "learning_rate": 0.001
+        }
+    },
+    "episodes_print_freq": 50,
+    "smoothing_window_size": 1
+}
